@@ -25,9 +25,8 @@ Implemented behaviour
 =====================
 
 Collector saves everything to local database and does not use any external API.
-It's possible to generate html page that visualizes collected data.
 
-All this is for demo purposes only: storage is slow and unoptimized.
+All code is for demo purposes only: storage is slow and unoptimized.
 
 Usage
 =====

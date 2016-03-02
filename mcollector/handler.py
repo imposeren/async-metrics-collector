@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from mcollector.collectors import PsutilCollector
 from mcollector.storages import TinyDBStorage
-from mcollector.renderers import NVD3Rendered
 import argparse
 import asyncio
 import contextlib
@@ -18,8 +17,6 @@ def run(args):
     if args.dump:
         for data in storage.all_sorted():
             print('{metric_path} {result} {timestamp}'.format(**data))
-    elif args.visualize:
-        print(NVD3Rendered().render(storage.all_sorted()))
     else:
         if args.clear_storage:
             storage.clear()
