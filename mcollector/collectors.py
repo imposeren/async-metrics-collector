@@ -65,7 +65,6 @@ class BaseCollector(object):
                 wait_time = 0.1
             yield from asyncio.sleep(wait_time)
 
-
     def get_cpu_percent_usage(self, interval=1, iterations=1):
         """Return average CPU usage.
 
@@ -135,4 +134,3 @@ class PsutilCollector(BaseCollector):
 
     def get_disk_free(self, partition_path):
         return psutil.disk_usage(partition_path).free
-
