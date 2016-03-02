@@ -66,7 +66,7 @@ def main():
     parser.add_argument(
         '--interval',
         dest='metric_interval',
-        default=5,
+        default=1,
         type=int,
         help='interval in seconds for metrics collecting (default: 5)'
     )
@@ -103,15 +103,6 @@ def main():
         const=True,
         default=False,
         help='dump stored data in Graphite compatible format and exit'
-    )
-
-    parser.add_argument(
-        '--visualize',
-        dest='visualize',
-        action='store_const',
-        const=True,
-        default=False,
-        help='store html file with data visualization'
     )
 
     args = parser.parse_args()

@@ -66,7 +66,7 @@ class BaseCollector(object):
             yield from asyncio.sleep(wait_time)
 
 
-    def get_cpu_percent_usage(self, interval=3, iterations=1):
+    def get_cpu_percent_usage(self, interval=1, iterations=1):
         """Return average CPU usage.
 
         Run `iterations` number of tests each taking `interval` seconds.
@@ -77,7 +77,7 @@ class BaseCollector(object):
             aggregated += self.get_cpu_percent(interval=interval)
         return aggregated / iterations
 
-    def get_memory_percent_usage(self, interval=1, iterations=3):
+    def get_memory_percent_usage(self, interval=1, iterations=1):
         """Return average memory usage percent.
 
         Run `iterations` number of tests with `interval` seconds pause between them.
@@ -92,7 +92,7 @@ class BaseCollector(object):
     def get_disk_bytes_usage(self, partition_path):
         return (self.get_disk_total(partition_path), self.get_disk_free(partition_path))
 
-    def get_cpu_percent(self, interval=3):
+    def get_cpu_percent(self, interval=1):
         raise NotImplementedError()
 
     def get_memory_percent(self):
@@ -110,7 +110,7 @@ class BaseCollector(object):
 
 class PsutilCollector(BaseCollector):
 
-    def get_cpu_percent(self, interval=3):
+    def get_cpu_percent(self, interval=1):
         return psutil.cpu_percent(interval=interval)
 
     def get_memory_percent(self):
