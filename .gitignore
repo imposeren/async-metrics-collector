@@ -1,0 +1,12 @@
+*.py[cod]
+.*
+*.sqlite*
+varying/
+reports/
+*.sublime-*
+*.tinydb
+*.egg-info
+*.html
+
+!.gitignore
+!.openshift
