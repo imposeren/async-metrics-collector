@@ -7,8 +7,8 @@ Overview
 ========
 
 You'd better use some already available project like https://github.com/python-diamond/Diamond
-or https://github.com/google/grr/. This project is implemented only as a demo and a learning task
-for coroutines
+or https://github.com/google/grr/. This project is implemented only as a demo and to test
+coroutines in Python 3.4
 
 Python version requirement
 ==========================
